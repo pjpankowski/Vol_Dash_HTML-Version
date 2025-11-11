@@ -39,7 +39,7 @@
             <button class="tab-btn" data-tab="performance-attr">Performance Attribution</button>
             <button class="tab-btn" data-tab="econ-calendar">Economic Calendar</button>
             <button class="tab-btn" data-tab="correlation-net">Correlation Network</button>
-            <button class="tab-btn" data-tab="deployment">📦 Deployment Guide</button>
+            <button class="tab-btn" data-tab="vol-surface">3D Vol Surface</button>
             <button class="tab-btn" data-tab="etf-arb">ETF Arbitrage</button>
             <button class="tab-btn" data-tab="grinold">Fundamental Law</button>
             <button class="tab-btn" data-tab="ic">IC Analysis</button>
@@ -54,13 +54,10 @@
             <button class="tab-btn" data-tab="global-dislocations">Global Dislocations</button>
             <button class="tab-btn" data-tab="variance-swaps">Variance Swaps</button>
             <button class="tab-btn" data-tab="dividend-futures">Dividend Futures</button>
-            <button class="tab-btn" data-tab="vix-term">VIX Term Structure</button>
-            <button class="tab-btn" data-tab="vol-forecasting">Vol Forecasting</button>
-            <button class="tab-btn" data-tab="dynamic-hedging">Dynamic Hedging</button>
-            <button class="tab-btn" data-tab="iv-rv">IV vs RV</button>
-            <button class="tab-btn" data-tab="vol-skew">Vol Skew</button>
-            <button class="tab-btn" data-tab="portfolio-construction">Portfolio Construction</button>
-            <button class="tab-btn" data-tab="trade-evaluation">Trade Evaluation</button>
+            <button class="tab-btn" data-tab="vol-forecasting">Forecasting Models</button>
+            <button class="tab-btn" data-tab="factor-analysis">Factor Analysis</button>
+            <button class="tab-btn" data-tab="portfolio-opt">Portfolio Optimization</button>
+
         </nav>
 
         <!-- Global Controls -->
@@ -1358,22 +1355,41 @@
             <!-- NEW TAB: CORRELATION NETWORK -->
             <div id="correlation-net" class="tab-content"></div>
 
-            <!-- DEPLOYMENT GUIDE -->
-            <div id="deployment" class="tab-content">
+            <!-- PLACEHOLDER FOR 3D VOL SURFACE -->
+            <div id="vol-surface" class="tab-content">
                 <div class="section-header">
-                    <h2>📦 Deployment Guide - Production Setup</h2>
-                    <p class="section-description">Complete instructions for deploying this Bloomberg Terminal-style platform to production</p>
+                    <h2>3D Volatility Surface</h2>
+                    <p class="section-description">Interactive 3D visualization of implied volatility across strikes and maturities</p>
+                </div>
+                
+                <div class="chart-card-large">
+                    <h3>3D Vol Surface (Strike × Maturity × IV)</h3>
+                    <div id="mainVolSurface3D"></div>
                 </div>
 
-                <div class="sinclair-banner">
-                    <div class="banner-content">
-                        <h3>🚀 Professional Deployment Framework</h3>
-                        <p>This application is production-ready and can be deployed to any static hosting service (Netlify, Vercel, AWS S3, GitHub Pages, Azure Static Web Apps). No server-side code required!</p>
+                <div id="factor-analysis" class="tab-content">
+                    <div class="section-header">
+                        <h2>Factor Analysis</h2>
+                        <p class="section-description">Multi-factor risk model with exposure analysis</p>
+                    </div>
+                    <div class="info-box">
+                        <h4>Factor Analysis Module</h4>
+                        <p>Comprehensive factor exposure tracking and risk decomposition.</p>
+                    </div>
+                </div>
+                
+                <div id="portfolio-opt" class="tab-content">
+                    <div class="section-header">
+                        <h2>Portfolio Optimization</h2>
+                        <p class="section-description">Mean-variance optimization with constraints</p>
+                    </div>
+                    <div class="info-box">
+                        <h4>Portfolio Optimization</h4>
+                        <p>Advanced portfolio construction using modern portfolio theory.</p>
                     </div>
                 </div>
 
-                <div class="chart-card-large" style="background: linear-gradient(135deg, #1a3a4a, #0f1922); border: 2px solid var(--cyan);">
-                    <h3>⚡ Quick Deploy (5 Minutes)</h3>
+            </div>
                     <div style="padding: 1.5rem;">
                         <div style="background: var(--hover); padding: 1.5rem; border-radius: 8px; margin-bottom: 1rem;">
                             <h4 style="color: var(--cyan); margin-bottom: 1rem;">Option 1: Netlify (Recommended)</h4>
@@ -1656,7 +1672,7 @@ netlify deploy --prod
 
                 <div class="chart-card-large">
                     <h3>🔥 Advanced: AWS S3 + CloudFront</h3>
-                    <div style="padding: 1.5rem;">
+
                         <p style="color: var(--text-secondary); margin-bottom: 1rem;">For enterprise-grade hosting with custom AWS infrastructure:</p>
                         <pre style="background: var(--charcoal); padding: 1.5rem; border-radius: 8px; color: var(--cyan); font-size: 0.85rem; overflow-x: auto; line-height: 1.8;">
 # 1. Create S3 bucket
