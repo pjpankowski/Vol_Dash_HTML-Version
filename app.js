@@ -423,6 +423,9 @@ function initializeTabCharts(tabId) {
     case 'correlation-net':
       initCorrelationNet();
       break;
+    case 'deployment':
+      // Deployment guide is static HTML, no charts needed
+      break;
   }
 
   chartsInitialized[tabId] = true;
